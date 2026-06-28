@@ -40,7 +40,7 @@ You can return the answer in any order.
 
 Розв'язування  
 
-<strong>Два цикла <code>for</code></strong>
+<strong>Два цикла <code>for</code></strong>  
 Рішення, гарне по Space complexity, але погане по Time complexety.  
 Space complexity: O(1)  
 Time complexity: O(n<sup>2</sup>)  
