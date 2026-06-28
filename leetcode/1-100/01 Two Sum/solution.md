@@ -36,6 +36,12 @@ You can return the answer in any order.
 
 <strong>Follow-up:</strong> Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code> time complexity?
 
+***  
+
+Розв'язування  
+
+<strong>Два цикла <code>for</code></strong>
+
 Рішення, гарне по Space complexity, але погане по Time complexety.  
 Space complexity: O(1)  
 Time complexity: O(n<sup>2</sup>)  
@@ -53,7 +59,8 @@ const twoSum = (nums, target) => {
 }
 ```  
 
-Рішення з введенням Hash Map. Покращує Time complexity, але погіршує Space complexity.   
+Використання <strong>Hash Map</strong>.  
+Покращує Time complexity, але погіршує Space complexity:   
 Space complexity: O(n)  
 Time complexity: O(n)
 #### JavaScript
