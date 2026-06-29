@@ -82,4 +82,65 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 
 ***
 
-<strong>Solution</strong>
+<strong>Solution</strong>  
+
+```C++
+class Solution {
+public:
+    std::vector<long long> minTimeMaxPower(int n, std::vector<std::vector<int>>& edges, int power, std::vector<int>& cost, int source, int target)
+    {
+      std::vector<std::vector<std::pair<int,int>>> g(n);
+      
+      for (const auto &e : edges) {
+          int u = e[0], v = e[1], t = e[2];
+          g[u].push_back({v, t});
+      }
+
+      const long long INF = 4e18;
+
+      std::vector<std::vector<long long>> dist(n, std::vector<long long>(power + 1, INF));
+
+      using State = std::tuple<long long, int, int>; 
+      std::priority_queue<State, std::vector<State>, std::greater<State>> pq;
+
+      dist[source][power] = 0;
+      pq.push({0, source, power});
+
+      while (!pq.empty()) {
+        auto [time, u, p] = pq.top();
+        pq.pop();
+
+        if (time != dist[u][p]) continue;
+
+        int np = p - cost[u];
+
+        for (auto [v, t] : g[u]) {
+            if (p < cost[u]) continue;
+
+            long long nt = time + t;
+
+            if (nt < dist[v][np]) {
+                dist[v][np] = nt;
+                pq.push({nt, v, np});
+            }
+        }
+      }
+
+      long long bestTime = INF;
+      int bestPower = -1;
+
+      for (int p = 0; p <= power; p++) {
+        if (dist[target][p] < bestTime) {
+            bestTime = dist[target][p];
+            bestPower = p;
+        } else if (dist[target][p] == bestTime) {
+            bestPower = std::max(bestPower, p);
+        }
+      }
+
+      if (bestTime == INF) return {-1, -1};
+
+      return {bestTime, bestPower};
+    }
+};
+```
