@@ -7,10 +7,11 @@ You must choose <strong>exactly</strong> one <strong>subarray</strong> of <code>
 1. Multiply each number in the chosen subarray by <code>k</code>.
 2. Divide each number in the chosen subarray by <code>k</code>.
 <li>When dividing a positive number by <code>k</code>, use the <strong>floor</strong> value of the division result.</li>
-<li>When dividing a negative number by <code>k</code>, use the <strong>ceiling</strong> value of the division result.</li>  
+<li>When dividing a negative number by <code>k</code>, use the <strong>ceiling</strong> value of the division result.</li>
+<br />
 Return the <strong>maximum</strong> possible sum of a <strong>non-empty</strong> subarray in the resulting array.  
+
 Note that the subarray chosen for the operation and the subarray chosen for the sum may be <strong>different</strong>.  
- 
 <br />
 <strong>Example 1:</strong>  
 <pre>
@@ -23,7 +24,8 @@ Note that the subarray chosen for the operation and the subarray chosen for the 
 <li>This results in <code>nums = [1, -2, 6, 8, -5]</code>.</li>
 <li>The subarray with the largest sum is <code>[6, 8]</code>, so the output is <code>6 + 8 = 14</code>.</li>  
 <br/>
-<strong>Example 2:</strong>  
+<strong>Example 2:</strong>
+<br />
 <pre>
 <strong>Input</strong>: nums = [-5,-4,-3], k = 2  
 <strong>Output</strong>: -1
@@ -32,7 +34,7 @@ Note that the subarray chosen for the operation and the subarray chosen for the 
 <strong>Explanation:</strong>  
 <li>Divide each number in the subarray <code>[-3]</code> by 2.</li>
 <li>This results in <code>nums = [-5, -4, -1]</code>.</li>
-<li>he subarray with the largest sum is <code>[-1]</code>, so the output is -1.</li>  
+<li>The subarray with the largest sum is <code>[-1]</code>, so the output is -1.</li>  
 <br />
 <strong>Constraints:</strong>
 
