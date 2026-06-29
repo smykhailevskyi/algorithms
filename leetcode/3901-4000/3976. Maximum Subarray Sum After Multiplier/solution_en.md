@@ -47,7 +47,47 @@ Note that the subarray chosen for the operation and the subarray chosen for the 
 
 <h3>Solution</h3>  
 
+<strong>Time complexity:</strong> <code>O(n)</code>  
+<strong>Space complexity:</strong> <code>O(1)</code>
+
 <strong>C++</strong>  
 ```C++
+#include <vector>
+#include <algorithm>
 
+class Solution {
+public:
+    long long maxSubarraySum(std::vector<int>& nums, int k) {
+      return std::max(solve(nums, k, true), solve(nums, k, false));
+    }
+
+private:
+  long long solve(std::vector<int>& nums, int k, bool multiply) {
+    const long long NEG = -4e18;
+
+    long long dp0 = NEG;
+    long long dp1 = NEG;
+    long long dp2 = NEG;
+
+    long long ans = NEG;
+
+    for (int x : nums) {
+      long long val = multiply ? 1LL * x * k : x / k;
+
+      long long ndp0 = std::max((long long)x, dp0 + x);
+
+      long long ndp1 = std::max({val, dp0 + val, dp1 + val});
+
+      long long ndp2 = std::max(dp1 + x, dp2 + x);
+
+      dp0 = ndp0;
+      dp1 = ndp1;
+      dp2 = ndp2;
+
+      ans = std::max({ans, dp0, dp1, dp2});
+    }
+
+    return ans;
+  }
+};
 ```
