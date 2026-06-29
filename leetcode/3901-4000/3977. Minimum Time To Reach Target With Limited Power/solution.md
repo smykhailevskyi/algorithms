@@ -4,7 +4,7 @@
 
 You are given a <strong>directed</strong> weighted graph with <code>n</code> nodes labeled from 0 to <code>n - 1</code>.  
 
-The graph is represented by a 2D integer array <code>edges</code>, where <code>edges[i] = [ui, vi, ti]</code> indicates a directed edge from node <code>u<sub>i</sub></code> to node <code>v<sub>i</sub></code> that takes <code>t<sub>i</sub></code> seconds to traverse.  
+The graph is represented by a 2D integer array <code>edges</code>, where <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>, t<sub>i</sub>]</code> indicates a directed edge from node <code>u<sub>i</sub></code> to node <code>v<sub>i</sub></code> that takes <code>t<sub>i</sub></code> seconds to traverse.  
 
 You are also given an integer <code>power</code> representing the initial available power, and an integer array <code>cost</code> of length <code>n</code>, where <code>cost[u]</code> represents the power required to forward the signal from node <code>u</code> through <strong>any</strong> one of its outgoing edges.  
 
@@ -39,7 +39,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <li>The total power consumed along this path is <code>cost[0] + cost[2] + cost[3] = 4</code>, leaving 0 remaining power.</li>  
 <li>Hence, the answer is <code>[3, 0]</code>.</li>  
 
-<strong>Example 2:</strong>  
+<strong>Example: 2</strong>
 
 <img alt="" src="../../../images/dikstra/3977/2.png" style="height: 220px; width: 200px;" />  
 
@@ -78,4 +78,8 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <li><code>1 <= power <= 1000</li></code>
 <li><code>cost.length == n</li></code>
 <li><code>1 <= cost[i] <= 2000</li></code>
-<li><code>0 <= source, target <= n - 1</li></code>
+<li><code>0 <= source, target <= n - 1</li></code>  
+
+***
+
+<strong>Solution</strong>
