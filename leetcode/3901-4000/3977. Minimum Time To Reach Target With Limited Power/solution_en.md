@@ -84,6 +84,14 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 
 <strong>Solution</strong>  
 
+<strong>Time complexity</strong>:  <code> O((V × P + E × P) log(V × P))</code>  
+<strong>Space complexity</strong>: <code> O(V × P + E)</code>  
+
+where:  
+<code>V = n</code>  
+<code>E = edges.size()</code>  
+<code>P = power + 1</code>  
+
 ```C++
 class Solution {
 public:
