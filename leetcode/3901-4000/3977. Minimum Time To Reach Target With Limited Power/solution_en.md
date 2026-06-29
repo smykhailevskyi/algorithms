@@ -38,7 +38,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <li>The valid path <code>0 -> 2 -> 3 -> 4</code> takes a total time of 3.</li>  
 <li>The total power consumed along this path is <code>cost[0] + cost[2] + cost[3] = 4</code>, leaving 0 remaining power.</li>  
 <li>Hence, the answer is <code>[3, 0]</code>.</li>  
-
+<br />
 <strong>Example: 2</strong>
 
 <img alt="" src="../../../images/dikstra/3977/2.png" style="height: 220px; width: 200px;" />  
@@ -54,7 +54,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <li>Since the <code>source</code> and <code>target</code> are the same node, no traversal is required.</li>
 <li>Hence, the minimum total time taken is 0, and no power is consumed.</li>
 <li>Therefore, the answer is <code>[0, 3]</code>.</li>  
-
+<br />
 <strong>Example 3:</strong>  
 
 <img alt="" src="../../../images/dikstra/3977/3.png" style="height: 220px; width: 200px;" />  
@@ -67,7 +67,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <strong>Explanation:</strong>  
 
 <li>There is no valid path from <code>source</code> to <code>target</code>, therefore return <code>[-1, -1]</code>.</li>  
-
+<br />
 <strong>Constraints:</strong>  
 
 <li><code>1 <= n <= 1000</li></code>
@@ -82,7 +82,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 
 ***
 
-<strong>Solution</strong>  
+<h3>Solution</h3>  
 
 <strong>Time complexity</strong>:  <code> O((V × P + E × P) log(V × P))</code>  
 <strong>Space complexity</strong>: <code> O(V × P + E)</code>  
@@ -91,6 +91,9 @@ where:
 <code>V = n</code>  
 <code>E = edges.size()</code>  
 <code>P = power + 1</code>  
+<br />
+
+<strong>C++</strong>  
 
 ```C++
 class Solution {
