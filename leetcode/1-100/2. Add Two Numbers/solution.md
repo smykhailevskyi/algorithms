@@ -44,7 +44,8 @@ You may assume the two numbers do not contain any leading zero, except the numbe
 Типова задачка на <strong>Linked List</strong>. <code>Medium</code> рівень отримала, мабуть, тільки за розв’язок питання, що робити з перенесенням заряду. А так все по класиці - ітерація двох зв'язаних списків різної/однакової довжини та <strong>dummy</strong> вузол для спрощення побудови списку.  
 
 По складності:  
-Маємо ітерацію по довжинам двох списків: <code>n</code> та <code>m</code>. Відповідно <strong>Time complexity</strong>: <code>O(max(n, m))</code> або можно просто <code>O(n)</code>, де <code>n</code> - довжина довшого з списків.  
+Маємо ітерацію по довжинам двох списків: <code>n</code> та <code>m</code>.  
+Відповідно <strong>Time complexity</strong>: <code>O(max(n, m))</code> або можно просто <code>O(n)</code>, де <code>n</code> - довжина довшого з списків.  
 По <strong>Space complexity</strong>: <code>O(n)</code>, де <code>n</code> - виділена пам’ять під <code>n</code> нових об’єктів, у випадку якщо результат має <code>n</code> вузлів.  
 
 ```C++
