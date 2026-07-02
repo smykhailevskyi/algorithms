@@ -74,7 +74,7 @@ If the signal cannot reach <code>target</code>, return <code>[-1, -1]</code>.
 <li><code>0 <= edges.length <= 1000</li></code>
 <li><code>edges[i] = [ui, vi, ti]</li></code>
 <li><code>0 <= ui, vi <= n - 1</li></code>
-<li><code>1 <= ti <= 109</li></code>
+<li><code>1 <= ti <= 10<sup>9</sup></li></code>
 <li><code>1 <= power <= 1000</li></code>
 <li><code>cost.length == n</li></code>
 <li><code>1 <= cost[i] <= 2000</li></code>

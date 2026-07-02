@@ -38,9 +38,9 @@ Note that the subarray chosen for the operation and the subarray chosen for the 
 <br />
 <strong>Constraints:</strong>
 
-<li><code>1 <= nums.length <= 105</code></li>
-<li><code>-105 <= nums[i] <= 105</code></li>
-<li><code>1 <= k <= 105</code></li>   
+<li><code>1 <= nums.length <= 10<sup>5</sup></code></li>
+<li><code>-10<sup>5</sup> <= nums[i] <= 10<sup>5</sup></code></li>
+<li><code>1 <= k <= 10<sup>5</sup></code></li>   
 
 ***
 

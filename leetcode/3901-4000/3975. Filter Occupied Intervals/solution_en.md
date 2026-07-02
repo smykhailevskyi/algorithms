@@ -39,10 +39,10 @@ Return the <strong>remaining</strong> occupied intervals in <strong>sorted</stro
 <br />
 <strong>Constraints:</strong>  
 
-<li><code>1 <= occupiedIntervals.length <= 5 * 104</code></li>
+<li><code>1 <= occupiedIntervals.length <= 5 * 10<sup>4</sup></code></li>
 <li><code>occupiedIntervals[i].length == 2</code></li>
-<li><code>1 <= starti <= endi <= 109</code></li>
-<li><code>1 <= freeStart <= freeEnd <= 109</code></li>  
+<li><code>1 <= start<sub>i</sub> <= end<sub>i</sub> <= 10<sup>9</sup></code></li>
+<li><code>1 <= freeStart <= freeEnd <= 10<sup>9</sup></code></li>  
 
 ***
 
