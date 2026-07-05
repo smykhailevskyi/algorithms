@@ -45,7 +45,7 @@ We will send a signal from a given node <code>k</code>. Return <i>the <strong>mi
 
 <h3>Solution</h3>
 
-Оскільки потрібно швидко обходити сусідів вершини, використовуємо <strong>[список суміжності]('../../../../data%20structures/graph/graph_representations.md')</strong>.  
+Оскільки потрібно швидко обходити сусідів вершини, використовуємо <strong>[список суміжності](https://github.com/smykhailevskyi/algorithms/blob/main/data%20structures/graph/graph_representations.md)</strong>.  
 Використовуємо <strong>priority_queue (min-heap)</strong>, щоб кожного разу брати вершину з найменшим поточним часом.  
 Виконуємо <strong>релаксацію ребер (Edge Relaxation)</strong> 
 
