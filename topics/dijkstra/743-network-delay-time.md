@@ -53,7 +53,9 @@ We will send a signal from a given node <code>k</code>. Return <i>the <strong>mi
 <strong>Space complexity:</strong> <code>O(V + E)</code>  
 де:  
 <code>V (Vertices)</code> - кількість вершин  
-<code>E (Edges)</code> - кількість ребер.
+<code>E (Edges)</code> - кількість ребер.  
+
+Реалізація на <strong>C++</strong>
 
 ```C++
 class Solution {
