@@ -7,13 +7,13 @@ You are given an integer array <code>nums</code> of length <code>n</code> and an
 A pair of indices <code>(i, j)</code> is called <strong>valid</strong> if:
 
 <li><code>0 <= i < j < n</li></code>
-<li><code>j - i >= k</li></code>  
+<li><code>j - i >= k</li></code>     
 <br />
+  
 Return the <strong>maximum</strong> value of <code>nums[i] + nums[j]</code> among all valid pairs.  
 
-<br />  
+**Example 1:**  
 
-**Example 1:**
 <pre>
 <strong>Input</strong>: nums = [1,3,5,2,8], k = 2
 <strong>Output</strong>: 13
@@ -28,9 +28,9 @@ The valid pairs are:
 <li><code>(1, 3): nums[1] + nums[3] = 5</code></li>
 <li><code>(1, 4): nums[1] + nums[4] = 11</code></li>
 <li><code>(2, 4): nums[2] + nums[4] = 13</code></li>  
-<br />
-Thus, the answer is 13.​​​​​​​
+<br />  
 
+Thus, the answer is 13.​​​​​​​
 <br />
 
 **Example 2:**
