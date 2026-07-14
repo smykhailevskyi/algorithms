@@ -21,11 +21,10 @@ The optimal valid path from node 0 to node 2 is as follows:
 
 <li>Use <code>edges[2] = [0, 2, 3]</code> to reach node 2 with a weight <code>w<sub>i</sub> = 3</code>.</li>  
 <br />
-The corresponding concatenation of labels is <code>"ab"</code>, which satisfies at most <code>k = 1</code> consecutive identical characters. Thus, the answer is 3. 
 
-<br />  
-
-**Example 2:**
+The corresponding concatenation of labels is <code>"ab"</code>, which satisfies at most <code>k = 1</code> consecutive identical characters. Thus, the answer is 3.  
+<br /> 
+<strong>Example 2:</strong>
 
 <pre>
 <strong>Input:</strong> n = 3, edges = [[0,1,1],[1,2,1],[0,2,3]], labels = "aab", k = 2
