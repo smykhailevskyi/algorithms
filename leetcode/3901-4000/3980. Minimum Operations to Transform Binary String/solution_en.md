@@ -9,11 +9,10 @@ You can perform the following operations on <code>s1</code> any number of times,
 <li>Choose an index <code>i</code> such that <code>s1[i] == '0'</code>, and change it to <code>'1'</code>.</li>
 <li>Choose an index <code>i</code> such that <code>0 <= i < n - 1</code>, and both <code>s1[i]</code> and <code>s1[i + 1]</code> are <code>'1'</code>. Change both characters to <code>'0'</code>.</li>  
 <br />
-Return the <strong>minimum</strong> number of operations required to make <code>s1</code> equal to <code>s2</code>. If it is impossible, return -1.  
+  
+Return the <strong>minimum</strong> number of operations required to make <code>s1</code> equal to <code>s2</code>. If it is impossible, return -1.      
 
-<br/>
-
-**Example 1:**
+<strong>Example 1:</strong>
 
 <pre>
 <strong>Input:</strong> s1 = "11", s2 = "00"
