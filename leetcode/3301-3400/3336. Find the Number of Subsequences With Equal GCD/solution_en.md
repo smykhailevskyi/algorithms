@@ -7,12 +7,12 @@ You are given an integer array <code>nums</code>.
 Your task is to find the number of pairs of **non-empty** **subsequences** <code>(seq1, seq2)</code> of <code>nums</code> that satisfy the following conditions:
 
 <li>The subsequences <code>seq1</code> and <code>seq2</code> are <strong>disjoint</strong>, meaning <strong>no index of</strong> <code>nums</code> is common between them.</li>
-<li>The <strong>GCD</strong> of the elements of <code>seq1</code> is equal to the GCD of the elements of <code>seq2</code>.</li>
-Return the total number of such pairs.
+<li>The <strong>GCD</strong> of the elements of <code>seq1</code> is equal to the GCD of the elements of <code>seq2</code>.</li>  
+<br />
 
+Return the total number of such pairs.  
 <br />
 Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.
-
 <br />
 
 **Example 1:**
@@ -37,8 +37,8 @@ The subsequence pairs which have the GCD of their elements equal to 1 are:
 <li><code>([1, 2, <ins>3</ins>, <ins>4</ins>], [<ins>1</ins>, 2, 3, 4])</li></code>
 <li><code>([1, 2, <ins>3</ins>, <ins>4</ins>], [<ins>1</ins>, <ins>2</ins>, 3, 4])</li></code>  
 <br />
-<strong>Example 2:</strong>  
-
+  
+<strong>Example 2:</strong>
 <br />
 <pre>
 <strong>Input:</strong> nums = [10,20,30]
@@ -53,9 +53,10 @@ The subsequence pairs which have the GCD of their elements equal to 10 are:
 <li><code>([<ins>10</ins>, 20, 30], [10, <ins>20</ins>, <ins>30</ins>])</li></code>
 <li><code>([10, <ins>20</ins>, <ins>30</ins>], [<ins>10</ins>, 20, 30])</li></code>  
 <br />
+  
 <strong>Example 3:</strong>
+<br /> 
 
-<br />
 <pre>
 <strong>Input:</strong> nums = [1,1,1,1]
 
