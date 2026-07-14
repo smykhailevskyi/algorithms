@@ -21,6 +21,7 @@ The **score difference** is Alice's score **minus** Bob's score.
 Alice wants to **maximize** the score difference. If there are multiple values of <code>k</code> that achieve the **maximum** score difference, she chooses the **smallest** such <code>k</code>.
 
 Return the **product** of the **maximum** score difference and the chosen value of <code>k</code>. Since the result can be large, return it **modulo** <code>10<sup>9</sup> + 7</code>.  
+<br />
 
 **Example 1:**
 <pre>
