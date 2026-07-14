@@ -10,13 +10,13 @@ Your task is to count the number of ways to form <code>target</code> by choosing
 <li>The chosen indices from <code>word1</code> must be <strong>strictly</strong> increasing.</li>
 <li>The chosen indices from <code>word2</code> must be <strong>strictly</strong> increasing.</li>
 <li><strong>At least</strong> one character must be chosen from <strong>both</strong> <code>word1</code> and <code>word2</code>.</li>
+<br />
+
 Two ways are considered different if, for <strong>at least</strong> one position in <code>target</code>, the chosen character comes from a different string or a different index.
-
 <br />
+
 Return the number of ways. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.  
-
 <br />
-
 **Example 1:**
 
 <pre>
@@ -32,12 +32,10 @@ There are 5 ways to form <code>target</code>:
 <li><code>word1[0] = 'a'</code>, <code>word2[0] = 'b'</code>, <code>word2[2] = 'c'</code></li>
 <li><code>word2[1] = 'a'</code>, <code>word1[1] = 'b'</code>, <code>word1[2] = 'c'</code></li>
 <li><code>word2[1] = 'a'</code>, <code>word1[1] = 'b'</code>, <code>word2[2] = 'c'</code></li>
-
 <br />
+
 All ways preserve the increasing index order inside each string and choose at least one character from each string.  
-
 <br />
-
 **Example 2:**
 
 <pre>
@@ -68,8 +66,8 @@ There are 2 ways to form <code>target</code>:
 <li><code>word1[0] = 'x'</code>, <code>word1[1] = 'y'</code>, <code>word2[0] = 'x'</code>, <code>word2[1] = 'y'</code></li>
 <li><code>word2[0] = 'x'</code>, <code>word2[1] = 'y'</code>, <code>word1[0] = 'x'</code>, <code>word1[1] = 'y'</code></li>
 <br/>
+
 Each <code>"xy"</code> part in <code>target</code> comes entirely from one string. 
- 
 <br />
 
 **Example 4:**
