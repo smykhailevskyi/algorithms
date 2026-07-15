@@ -52,3 +52,66 @@ This route does not require any effort.
 * <code>1 <= rows, columns <= 100</code>
 * <code>1 <= heights[i][j] <= 10<sup>6</sup></code>
 
+***
+
+### Solution  
+
+Головна складність цієї задачи - зрозуміти, як рахувати відстань.  
+У звичайному алгоритмі Дейкстри задача -  знайти шлях із мінімальною сумою ваг. <code>newDistance = currentDistance + edgeWeight;</code>.  
+Тут Дейкстра для пошуку шляху з мінімальним максимальним ребром - потрібен найбільший перепад між найбільшим перепадом, який уже був на шляху, та перепадом на новому кроці: <code>newEffort = max(currentEffort, edgeWeight);</code>, де:  
+<code>edgeWeight = abs(heights[currentRow][currentCol] - heights[nextRow][nextCol]);</code>  
+а <code>currentEffort</code> - не є вагою одного ребра, а вже накопичений максимум усіх ребер пройденого шляху.  
+Все інше: priority_queue, релаксація, матриця найкращих значень, пропуск застарілих записів - як в класичному Дейкстра.  
+ 
+<strong>Time complexity:</strong> <code>O(rows × columns × log(rows × columns))</code>  
+<strong>Space complexity:</strong> <code>O(rows × columns)</code>   
+
+**C++**
+```C++
+class Solution {
+public:
+  int minimumEffortPath(vector<vector<int>>& heights) {
+    int rows = heights.size();
+    int columns = heights[0].size();
+
+    vector<vector<int>> effort(rows, vector<int>(columns, INT_MAX));
+
+    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> minHeap;
+
+    effort[0][0] = 0;
+    minHeap.push({0, 0, 0});
+
+    int directions[4][2] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
+
+    while (!minHeap.empty()) {
+      auto [currentEffort, row, column] = minHeap.top();
+      minHeap.pop();
+
+      if (row == rows - 1 && column == columns - 1) {
+          return currentEffort;
+      }
+
+      if (currentEffort > effort[row][column]) continue;
+
+      for (auto& direction : directions) {
+        int nextRow = row + direction[0];
+        int nextColumn = column + direction[1];
+
+        if (nextRow < 0 || nextRow >= rows || nextColumn < 0 || nextColumn >= columns) continue;
+
+        int heightDifference = abs(heights[row][column] - heights[nextRow][nextColumn]);
+
+        int newEffort = max(currentEffort, heightDifference);
+
+        if (newEffort < effort[nextRow][nextColumn]) {
+          effort[nextRow][nextColumn] = newEffort;
+
+          minHeap.push({ newEffort, nextRow, nextColumn });
+        }
+      }
+    }
+
+    return 0;
+  }
+};
+```
