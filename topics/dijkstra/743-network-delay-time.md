@@ -7,7 +7,7 @@ We will send a signal from a given node <code>k</code>. Return <i>the <strong>mi
 
 <strong>Example 1:</strong>   
 
-<img alt="" src="../../images/dikstra/743-network-delay-time.png" style="height: 220px; width: 200px;" />  
+<img alt="" src="../../images/dikstra/743/743-network-delay-time.png" style="height: 220px; width: 200px;" />  
 
 <pre>
 <strong>Input:</strong> times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
