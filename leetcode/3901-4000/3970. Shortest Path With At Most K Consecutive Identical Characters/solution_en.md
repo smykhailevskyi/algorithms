@@ -62,3 +62,78 @@ There is no valid path from node 0 to node 2 that satisfies at most <code>k = 2<
 <li><code>1 <= w<sub>i</sub> <= 10<sup>4</sup></code></li>
 <li><code>labels</code> consists of lowercase English letters</li>
 <li><code>1 <= k <= 50</code></li>
+
+
+### Solution  
+
+<strong>Time complexity</strong>:  <code> O(E × K × log(V × K))</code>  
+<strong>Space complexity</strong>: <code> O(V × K + E)</code>  
+**where**:  
+<code>E</code> - кількість ребер графа  
+<code>V</code> - кількість вершин графа  
+<code>K</code> - максимальна дозволена кількість однакових символів поспіль  
+
+
+```C++
+class Solution {
+public:
+    int shortestPath(int n, vector<vector<int>>& edges, string labels, int k) {
+      vector<vector<pair<int, int>>> graph(n);
+
+      for (const auto& edge : edges) {
+        int u = edge[0];
+        int v = edge[1];
+        int weight = edge[2];
+
+        graph[u].push_back({v, weight});
+      }
+
+      const long long INF = LLONG_MAX / 4;
+
+      vector<vector<long long>> dist(n, vector<long long>(k + 1, INF));
+
+      using State = tuple<long long, int, int>;
+
+      priority_queue<State, vector<State>, greater<State>> pq;
+
+      dist[0][1] = 0;
+      pq.push({0, 0, 1});
+
+      while (!pq.empty()) {
+        auto [currentDist, u, count] = pq.top();
+        pq.pop();
+
+        if (currentDist != dist[u][count]) {
+          continue;
+        }
+
+        if (u == n - 1) {
+          return static_cast<int>(currentDist);
+        }
+
+        for (auto [v, weight] : graph[u]) {
+          int newCount;
+
+          if (labels[u] == labels[v]) {
+            newCount = count + 1;
+          } else {
+            newCount = 1;
+          }
+
+          if (newCount > k) {
+            continue;
+          }
+
+          long long newDist = currentDist + weight;
+
+          if (newDist < dist[v][newCount]) {
+            dist[v][newCount] = newDist;
+            pq.push({newDist, v, newCount});
+          }
+        }
+      }
+
+      return -1;
+    }
+};
+```
