@@ -61,8 +61,10 @@ There is no valid path from node 0 to node 2 that satisfies at most <code>k = 2<
 <li><code>u<sub>i</sub> != v<sub>i</sub></code></li>
 <li><code>1 <= w<sub>i</sub> <= 10<sup>4</sup></code></li>
 <li><code>labels</code> consists of lowercase English letters</li>
-<li><code>1 <= k <= 50</code></li>
+<li><code>1 <= k <= 50</code></li>  
+<br/>
 
+***
 
 ### Solution  
 
