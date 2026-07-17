@@ -71,9 +71,9 @@ There is no valid path from node 0 to node 2 that satisfies at most <code>k = 2<
 <strong>Time complexity</strong>:  <code> O(E × K × log(V × K))</code>  
 <strong>Space complexity</strong>: <code> O(V × K + E)</code>  
 **where**:  
-<code>E</code> - кількість ребер графа  
-<code>V</code> - кількість вершин графа  
-<code>K</code> - максимальна дозволена кількість однакових символів поспіль  
+<code>E</code> - number of edges  
+<code>V</code> - number of vertices  
+<code>K</code> - the maximum allowed number of consecutive identical characters.  
 
 
 ```C++
