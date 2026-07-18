@@ -53,3 +53,72 @@ The first operation cannot change <code>'1'</code> to <code>'0'</code>, and the 
 
 <li><code>1 <= n == s1.length == s2.length <= 10<sup>5</sup></code></li>
 <li><code>s1</code> and <code>s2</code> consist only of <code>'0'</code> and <code>'1'</code>.</li>
+<br />
+
+***
+
+### Solution
+
+**Time complexity:** <code>O(n)</code>  
+**Space complexity:** <code>O(1)</code>
+
+
+**C++**
+```C++
+class Solution {
+public:
+    int minOperations(string s1, string s2) {
+      const int INF = 1e9;
+      int n = s1.size();
+      int dp[2] = { INF, INF };
+      dp[s1[0] - '0'] = 0;
+
+      for (int i = 0; i < n - 1; i++) {
+          int nextDp[2] = {INF, INF};
+
+          int nextBit = s1[i + 1] - '0';
+          int target = s2[i] - '0';
+
+        for (int current = 0; current <= 1; current++) {
+          if (dp[current] == INF) continue;
+
+          if (current <= target) {
+              int cost = target - current;
+
+              nextDp[nextBit] = min(nextDp[nextBit], dp[current] + cost);
+          }
+
+          int cost = 1;
+
+          if (current == 0) {
+              cost++;
+          }
+
+          if (nextBit == 0) {
+              cost++;
+          }
+
+          if (target == 1) {
+              cost++;
+          }
+
+          nextDp[0] = min(nextDp[0], dp[current] + cost);
+        }
+
+        dp[0] = nextDp[0];
+        dp[1] = nextDp[1];
+      }
+
+      int target = s2[n - 1] - '0';
+      int answer = INF;
+
+      for (int current = 0; current <= 1; current++) {
+        if (current <= target) {
+          answer = min(answer, dp[current] + target - current);
+        }
+      }
+
+      return answer == INF ? -1 : answer;
+    }
+};
+```
