@@ -83,4 +83,89 @@ The only way is to choose <code>word1[0] = 'a'</code>, <code>word2[0] = 'c'</cod
 
 <li><code>1 <= word1.length, word2.length, target.length <= 100</code></li>
 <li><code>word1</code>, <code>word2</code>, and target consist of lowercase English letters only.</li>
+<br />
 
+***
+
+### Solution
+
+**Time complexity:**  <code>O(n<sup>3</sup>)</code>  
+**Space complexity:**  <code>O(n<sup>2</sup>)</code>  
+
+**C++**
+
+```C++
+class Solution {
+public:
+    static constexpr int MOD = 1'000'000'007;
+
+    int interleaveCharacters(string word1, string word2, string target) {
+      int n = word1.size();
+      int m = word2.size();
+
+      vector<vector<array<long long, 4>>> dp(n + 1, vector<array<long long, 4>>(m + 1));
+      dp[0][0][0] = 1;
+
+      for (char targetChar : target) {
+        vector<vector<array<long long, 4>>> next(n + 1, vector<array<long long, 4>>(m + 1));
+
+        for (int j = 0; j <= m; ++j) {
+          array<long long, 4> prefix = {};
+
+          for (int p = 0; p < n; ++p) {
+            for (int mask = 0; mask < 4; ++mask) {
+              prefix[mask] += dp[p][j][mask];
+              prefix[mask] %= MOD;
+            }
+
+            if (word1[p] != targetChar) {
+              continue;
+            }
+
+            for (int mask = 0; mask < 4; ++mask) {
+              int newMask = mask | 1;
+
+              next[p + 1][j][newMask] += prefix[mask];
+              next[p + 1][j][newMask] %= MOD;
+            }
+          }
+        }
+
+        for (int i = 0; i <= n; ++i) {
+          array<long long, 4> prefix = {};
+
+          for (int q = 0; q < m; ++q) {
+            for (int mask = 0; mask < 4; ++mask) {
+              prefix[mask] += dp[i][q][mask];
+              prefix[mask] %= MOD;
+            }
+
+            if (word2[q] != targetChar) {
+              continue;
+            }
+
+            for (int mask = 0; mask < 4; ++mask) {
+              int newMask = mask | 2;
+
+              next[i][q + 1][newMask] += prefix[mask];
+              next[i][q + 1][newMask] %= MOD;
+            }
+          }
+        }
+
+        dp = move(next);
+      }
+
+      long long answer = 0;
+
+      for (int i = 0; i <= n; ++i) {
+        for (int j = 0; j <= m; ++j) {
+          answer += dp[i][j][3];
+          answer %= MOD;
+        }
+      }
+
+      return static_cast<int>(answer);
+    }
+};
+```
