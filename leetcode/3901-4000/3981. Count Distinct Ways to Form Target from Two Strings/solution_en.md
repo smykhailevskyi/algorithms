@@ -97,7 +97,7 @@ The only way is to choose <code>word1[0] = 'a'</code>, <code>word2[0] = 'c'</cod
 ```C++
 class Solution {
 public:
-    static constexpr int MOD = 1'000'000'007;
+    static constexpr int MOD = 1000000007;
 
     int interleaveCharacters(string word1, string word2, string target) {
       int n = word1.size();
